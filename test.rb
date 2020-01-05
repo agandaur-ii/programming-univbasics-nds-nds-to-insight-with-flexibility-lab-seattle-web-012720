@@ -1,6 +1,7 @@
 def flatten_a_o_a(aoa)
   result = []
   i = 0
+
   while i < aoa.length do
     k = 0
     while k < aoa[i].length do
@@ -8,7 +9,9 @@ def flatten_a_o_a(aoa)
       k += 1
     end
     i += 1
-   end
+  end
+
+  result
 end
    
 
