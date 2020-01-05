@@ -529,3 +529,5 @@ test_data_two =    [{:title=>"Jaws",
 
 #pp movies_with_directors_set(test)    
 #pp gross_per_studio(test_data_two)
+pp studios_totals(test)
+
