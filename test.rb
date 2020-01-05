@@ -52,8 +52,8 @@ def movies_with_directors_set(source)
       new_array =[] 
       new_hash[:title] = source[director_index][:movies][movie_index][:title]
       new_hash[:director_name] = source[director_index][:name]
-      new_hash[:studio] = source[director_index][:movies][movie_index][:studio]
-      new_hash[:worldwide_gross] = source[director_index][:movies][movie_index][:worldwide_gross]
+      #new_hash[:studio] = source[director_index][:movies][movie_index][:studio]
+      #new_hash[:worldwide_gross] = source[director_index][:movies][movie_index][:worldwide_gross]
       new_array << new_hash
       array_of_movies_with_directors << new_array
       movie_index += 1
