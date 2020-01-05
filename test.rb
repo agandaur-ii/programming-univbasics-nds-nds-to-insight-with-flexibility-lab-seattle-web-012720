@@ -539,5 +539,6 @@ puts "++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 pp movies_with_director_names
 puts "========================================================"
 #pp movies_with_directors_set(test)    
-#pp gross_per_studio(test_data_two)
+pp gross_per_studio(test_data_two)
+puts "********************************************************"
 puts studios_totals(test)
