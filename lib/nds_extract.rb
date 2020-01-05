@@ -48,8 +48,20 @@ def movies_with_director_key(name, movies_collection)
   # Array of Hashes where each Hash represents a movie; however, they should all have a
   # :director_name key. This addition can be done by using the provided
   # movie_with_director_name method
+  
+  index = 0 
+  while index < movies_collection.length do
+    movies_collection[index][:director_name] = name
+    index += 1
+  end
+  movies_collection
 end
 
+def find_studio(array_of_hash)
+  new_array = []
+  list_of_studios = array_of_hash.map { |x| new_array << x.values[1]}.flatten.uniq
+  list_of_studios
+end
 
 def gross_per_studio(collection)
   # GOAL: Given an Array of Hashes where each Hash represents a movie,
@@ -63,6 +75,25 @@ def gross_per_studio(collection)
   #
   # Hash whose keys are the studio names and whose values are the sum
   # total of all the worldwide_gross numbers for every movie in the input Hash
+  
+  hash_of_studio_gross = {}
+  list_of_studios = find_studio(collection)
+  studio_index = 0
+  while studio_index < list_of_studios.length do
+    c_index = 0
+    new_array_to_sum = []
+    while c_index < collection.length do
+     if collection[c_index].value?(list_of_studios[studio_index]) == false
+       c_index += 1
+     else
+      new_array_to_sum << collection[c_index][:worldwide_gross]
+      c_index += 1 
+     end   
+    end 
+    hash_of_studio_gross[list_of_studios[studio_index]] = new_array_to_sum.sum
+    studio_index += 1 
+  end
+  hash_of_studio_gross
 end
 
 def movies_with_directors_set(source)
@@ -76,7 +107,25 @@ def movies_with_directors_set(source)
   #
   # Array of Arrays containing all of a director's movies. Each movie will need
   # to have a :director_name key added to it.
+  
+  array_of_movies_with_directors = []
+  director_index = 0
+  while director_index < source.length do 
+    movie_index = 0
+    while movie_index < source[director_index][:movies].length do
+      new_hash = {} 
+      new_array =[] 
+      new_hash[:title] = source[director_index][:movies][movie_index][:title]
+      new_hash[:director_name] = source[director_index][:name]
+      new_array << new_hash
+      array_of_movies_with_directors << new_array
+      movie_index += 1
+    end
+    director_index += 1
+  end
+ array_of_movies_with_directors
 end
+
 
 # ----------------    End of Your Code Region --------------------
 # Don't edit the following code! Make the methods above work with this method
