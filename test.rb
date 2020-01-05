@@ -26,7 +26,7 @@ def gross_per_studio(collection)
   list_of_studios = find_studio(collection)
   studio_index = 0
   while studio_index < list_of_studios.length do
-    c_index = 0
+    c_index = 2 
     new_array_to_sum = []
     while c_index < collection.length do
      if collection[c_index].value?(list_of_studios[studio_index]) == false
