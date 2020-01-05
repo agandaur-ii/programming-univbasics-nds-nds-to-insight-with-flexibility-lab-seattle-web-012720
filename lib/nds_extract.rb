@@ -59,7 +59,7 @@ end
 
 def find_studio(array_of_hash)
   new_array = []
-  list_of_studios = array_of_hash.map { |x| new_array << x.values[1]}.flatten.uniq
+  list_of_studios = array_of_hash.map { |x| new_array << x.values[2]}.flatten.uniq
   list_of_studios
 end
 
