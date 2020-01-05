@@ -536,7 +536,7 @@ a_o_a_movies_with_director_names = movies_with_directors_set(test)
 movies_with_director_names = flatten_a_o_a(a_o_a_movies_with_director_names)
 pp a_o_a_movies_with_director_names
 puts "++++++++++++++"
-pp movies_with_director_names
+#pp movies_with_director_names
 #pp movies_with_directors_set(test)    
 #pp gross_per_studio(test_data_two)
-#puts studios_totals(test)
+puts studios_totals(test)
